@@ -8,11 +8,12 @@ export default function LoginProfessor() {
   const { login } = useAuth();
 
   const [formData, setFormData] = useState({
+    nome: "",
     email: "",
     senha: "",
   });
 
-  // Atualiza o estado conforme o usuário digita
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -49,14 +50,27 @@ export default function LoginProfessor() {
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/imagens/fundo.jpg')",
         }}
       >
-        <div className="min-h-78 flex items-center justify-center bg-red-950 rounded-xl shadow-lg">
+        <div className="min-h-78 flex items-center justify-center bg-white rounded-xl shadow-lg">
           <form onSubmit={handleSubmit} className="w-96 p-6">
-            <h2 className="text-2xl text-center text-white mb-6 font-bold">
+            <h2 className="text-2xl text-center text-black mb-6 font-bold">
               Login
             </h2>
 
-            {/* EMAIL */}
-            <fieldset className="fieldset mb-4">
+             <fieldset className="fieldset mb-4 text-black">
+              <legend className="fieldset-legend">Nome</legend>
+              <input
+                name="nome"
+                type="text"
+                className="input input-bordered w-full"
+                placeholder="Seu nome"
+                required
+                value={formData.nome}
+                onChange={handleChange}
+              />
+            </fieldset>
+
+           
+            <fieldset className="fieldset mb-4 text-black">
               <legend className="fieldset-legend">Email</legend>
               <input
                 name="email"
@@ -69,8 +83,8 @@ export default function LoginProfessor() {
               />
             </fieldset>
 
-            {/* SENHA */}
-            <fieldset className="fieldset mb-6">
+           
+            <fieldset className="fieldset mb-6 text-black">
               <legend className="fieldset-legend">Senha</legend>
               <input
                 name="senha"
@@ -84,23 +98,25 @@ export default function LoginProfessor() {
             </fieldset>
 
             <div className="flex justify-between">
-              <button
-                type="button"
-                onClick={() => navegacao.push("/")}
-                className="btn btn-neutral"
-              >
-                Cancelar
-              </button>
 
-              <button className="btn btn-primary" type="submit">
-                Entrar
-              </button>
+              <button
+              type="submit"
+              className="w-full bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
+            >
+              Entrar
+            </button>
             </div>
 
             <button
-              type="button"
-              onClick={() => navegacao.push("/cadastrar")}
-              className="btn btn-neutral mt-4 w-full"
+               onClick={() => navegacao.push("/")}
+              className="w-full mt-8 bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
+            >
+              Cancelar
+            </button>
+
+            <button
+               onClick={() => navegacao.push("/cadastrar")}
+              className="w-full mt-8 bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
             >
               Cadastrar
             </button>

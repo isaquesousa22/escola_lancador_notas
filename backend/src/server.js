@@ -59,7 +59,7 @@ app.post("/register/aluno", async (req, res) => {
 app.post("/login/professor", async (req, res) => {
   const { email, senha } = req.body;
 
-  const sql = "SELECT * FROM professor WHERE email = ?";
+  const sql = "SELECT * FROM professor WHERE nome = ? AND email = ?";
 
   db.query(sql, [email], async (err, results) => {
     if (err) return res.status(500).send("Erro no servidor.");
@@ -90,7 +90,8 @@ app.post("/login/professor", async (req, res) => {
 app.post("/login/aluno", async (req, res) => {
   const { email, senha } = req.body;
 
-  const sql = "SELECT * FROM alunos WHERE email = ?";
+  const sql = "SELECT * FROM alunos WHERE nome = ? AND email = ?";
+
 
   db.query(sql, [email], async (err, results) => {
     if (err) return res.status(500).send("Erro no servidor.");

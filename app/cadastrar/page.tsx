@@ -59,7 +59,7 @@ export default function Professor() {
                   value={formData.nome}
                   onChange={(e) => handleChange("nome", e.target.value)}
                   required
-                  className="w-full border border-gray-400 rounded-md p-1"
+                  className="w-full border border-gray-400 rounded-md p-1 text-black"
                 />
               </div>
 
@@ -75,12 +75,12 @@ export default function Professor() {
                   value={formData.telefone}
                   onChange={(e) => handleChange("telefone", e.target.value)}
                   required
-                  className="w-full border border-gray-400 rounded-md p-1"
+                  className="w-full border border-gray-400 rounded-md p-1 text-black"
                 />
               </div>
             </div>
 
-            {/* Endereço */}
+           
             <div className="space-y-2">
               <p className="flex items-center gap-2 text-black">
                 <MapPin className="w-4 h-4" />
@@ -93,11 +93,11 @@ export default function Professor() {
                 value={formData.endereco}
                 onChange={(e) => handleChange("endereco", e.target.value)}
                 required
-                className="w-full border border-gray-400 rounded-md p-1"
+                className="w-full border border-gray-400 rounded-md p-1 text-black"
               />
             </div>
 
-            {/* Email + Senha */}
+          
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <p className="flex items-center gap-2 text-black">
@@ -111,7 +111,7 @@ export default function Professor() {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   required
-                  className="w-full border border-gray-400 rounded-md p-1"
+                  className="w-full border border-gray-400 rounded-md p-1 text-black"
                 />
               </div>
 
@@ -127,7 +127,7 @@ export default function Professor() {
                   value={formData.senha}
                   onChange={(e) => handleChange("senha", e.target.value)}
                   required
-                  className="w-full border border-gray-400 rounded-md p-1"
+                  className="w-full border border-gray-400 rounded-md p-1 text-black"
                 />
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function Professor() {
                 value={formData.materia}
                 onChange={(e) => handleChange("materia", e.target.value)}
                 required
-                className="w-full border border-gray-400 rounded-md p-1"
+                className="w-full border border-gray-400 rounded-md p-1 text-black"
               />
             </div>
 
