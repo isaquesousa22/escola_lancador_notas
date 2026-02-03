@@ -22,7 +22,7 @@ export default function LoginProfessor() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:3001/login/professor", {
+    const res = await fetch("http://localhost:3001/login/aluno", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -123,7 +123,7 @@ export default function LoginProfessor() {
             </button>
 
             <button
-               onClick={() => navegacao.push("/cadastrar_professor")}
+               onClick={() => navegacao.push("/cadastrar_aluno")}
               className="w-full mt-8 bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
             >
               Cadastrar

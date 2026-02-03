@@ -23,6 +23,7 @@ export default function Home() {
                 Professor</button>
 
              <button 
+             onClick={() => navegacao.push("/aluno_login")}
              className="btn btn-secondary bg-[#13389c] p-3 border border-[#22222248] rounded-[0.8rem] font-bold text-white hover:bg-[#001e80] transition duration-500 hover:scale-105">Aluno</button>
              </div>
         

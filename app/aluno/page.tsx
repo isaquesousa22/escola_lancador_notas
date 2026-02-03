@@ -41,7 +41,7 @@ export default function Professor() {
         </nav>
       </header>
 
-      
+    
       <main className="max-w-7xl mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,18 +60,18 @@ export default function Professor() {
             <div className="p-6">
               <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                 <ClipboardList size={20} />
-                Gerenciar Notas
+                Boletim
               </h2>
 
               <p className="text-gray-600 text-sm mt-2">
-                Cadastre, edite e acompanhe as notas dos alunos de forma rápida e segura.
+                Acompanhe suas notas por aqui.
               </p>
 
               <button
                 onClick={() => router.push("/prof/notas")}
                 className="mt-5 w-full py-3 rounded-lg bg-[#13389c] text-white font-semibold hover:bg-[#001e80] transition"
               >
-                Lançar Notas
+                Ver Boletim
               </button>
             </div>
           </div>
