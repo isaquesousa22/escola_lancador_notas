@@ -61,7 +61,7 @@ export default function LoginProfessor() {
         <div className="min-h-78 flex items-center justify-center bg-white rounded-xl shadow-lg">
           <form onSubmit={handleSubmit} className="w-96 p-6">
             <h2 className="text-2xl text-center text-black mb-6 font-bold">
-              Login
+              Login do Aluno
             </h2>
 
              <fieldset className="fieldset mb-4 text-black">
@@ -109,25 +109,28 @@ export default function LoginProfessor() {
 
               <button
               type="submit"
-              className="w-full bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
+              className="w-full bg-[#13389c] hover:bg-[#001e80]/90 transition text-white text-lg py-3 rounded-md disabled:opacity-60"
             >
               Entrar
             </button>
             </div>
+            <div className="flex flex-col gap-3 mt-6">
+            <button
+              type="button"
+              onClick={() => navegacao.push("/cadastrar_aluno")}
+              className="w-full border border-[#13389c] text-[#13389c] hover:bg-[#13389c]/10 py-3 rounded-md"
+            >
+              Cadastrar-se
+            </button>
 
             <button
-               onClick={() => navegacao.push("/")}
-              className="w-full mt-8 bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
+              type="button"
+              onClick={() => navegacao.push("/")}
+              className="w-full text-gray-500 hover:text-gray-700 py-2"
             >
               Cancelar
             </button>
-
-            <button
-               onClick={() => navegacao.push("/cadastrar_aluno")}
-              className="w-full mt-8 bg-[#13389c] hover:bg-[#001e80]/90 text-white text-lg py-3 rounded-md"
-            >
-              Cadastrar
-            </button>
+          </div>
           </form>
         </div>
       </div>

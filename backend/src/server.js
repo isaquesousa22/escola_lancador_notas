@@ -22,13 +22,13 @@ app.post("/register/professor", async (req, res) => {
     db.query(sql, [nome, telefone, endereco, email, hash, materia], (err) => {
       if (err) {
         console.error(err);
-        return res.status(500).send("Erro ao cadastrar professor.");
+        return res.status(500).json({ message: "Erro ao cadastrar professor." });
       }
-      res.send("Professor cadastrado com sucesso!");
+      res.json({ message: "Professor cadastrado com sucesso!" });
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send("Erro interno.");
+    res.status(500).json({ message: "Erro interno." });
   }
 });
 
@@ -61,7 +61,8 @@ app.post("/login/professor", async (req, res) => {
 
   // Validação básica
   if (!email || !senha) {
-    return res.status(400).send("Email e senha são obrigatórios.");
+    return res.status(400).json({ message: "Email e senha são obrigatórios." });
+
   }
 
   const sql = "SELECT * FROM professor WHERE email = ?";
@@ -73,7 +74,7 @@ app.post("/login/professor", async (req, res) => {
     }
 
     if (results.length === 0) {
-      return res.status(404).send("Professor não encontrado.");
+      return res.status(404).json({ message: "Professor não encontrado." });
     }
 
     const user = results[0];
@@ -82,7 +83,7 @@ app.post("/login/professor", async (req, res) => {
       const senhaCorreta = await bcrypt.compare(senha, user.senha);
 
       if (!senhaCorreta) {
-        return res.status(401).send("Senha incorreta.");
+        return res.status(401).json({ message: "Senha incorreta." });
       }
 
       
